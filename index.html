@@ -25,13 +25,12 @@
     </header>
     <main class="principal">
         <section class="section-encriptar-desencriptar">
-            <textarea class="texto-encriptar-desencriptar" name="textarea"
+            <textarea class="texto-encriptar-desencriptar" id="texto" name="textarea"
                 placeholder="Ingrese el texto aqui"></textarea>
 
-            <h4 class="dato-importante">
+            <p class="dato-importante">
                 <img src="img/Vector.png" alt="Vector" /> Solo letras minusculas y sin
-                acentos.
-            </h4>
+                acentos.<p>
             <div class="btns">
                 <input class="btn-encriptar btn-color-encriptar" type="button" value="Encriptar" />
                 <input class="btn-desencriptar btn-color-desencriptar" type="button" value="Desencriptar" />
@@ -39,8 +38,8 @@
         </section>
 
         <section class="section-texto-resultado">
-            <div class="texto-resultado"></div>
-            <div class="mensaje-oculto">
+            <textarea class="texto-resultado" name="textarea"></textarea>
+            <div class="imagen-texto">
                 <img class="muneco" src="img/Muñeco.png" alt="Muñeco" />
                 <h3 class="titulo mensaje">Ningún mensaje fue encontrado</h3>
                 <p class="texto mensaje">
@@ -48,10 +47,14 @@
                 </p>
             </div>
 
-            <input type="button" value="Copiar" class="btn-copy" />
+            <input class="btn-copy" type="button" value="Copiar"  />
         </section>
     </main>
-    <script src="encriptador.js"></script>
+    <script src="script.js"></script>
+
+    <footer>
+        <p class="footer">© 2023 Yordi Gonzalez. Todos los derechos reservados.</p>
+    </footer>
 </body>
 
 </html>

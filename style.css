@@ -36,12 +36,13 @@ body {
     height: 400px;
     margin: 100px 0 0;
     border: none;
-    color: #0A3871;
-font-family: Inter, sans-serif;
-font-size: 32px;
-font-style: normal;
-font-weight: 400;
-line-height: 150%
+    color: #0a3871;
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    resize: none;
 }
 
 .texto-encriptar-desencriptar:focus {
@@ -52,30 +53,7 @@ line-height: 150%
     position: absolute;
     left: 3px;
     bottom: 130px;
-}
-
-.section-texto-resultado {
-    display: flex;
-    width: 47%;
-    max-width: 400px;
-    height: 795px;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 24px;
-    justify-content: center;
-    box-shadow: 0px 0px 5px 1px;
-    position: relative;
-    text-align: center;
-}
-
-.texto-resultado {
-    width: 96%;
-    height: 110px;
-    margin: 0 auto;
-}
-
-.mensaje-oculto {
-    padding: 32px;
+    display: none;
 }
 
 .btns {
@@ -106,6 +84,41 @@ line-height: 150%
     color: #0a3871;
 }
 
+.section-texto-resultado {
+    display: flex;
+    width: 47%;
+    max-width: 400px;
+    height: 795px;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 24px;
+    justify-content: center;
+    box-shadow: 0px 0px 5px 1px;
+    position: relative;
+    text-align: center;
+}
+
+.texto-resultado {
+    width: 88%;
+    height: 560px;
+    margin: 0 auto;
+    margin-bottom: 170px;
+    padding: 0 10px;
+    display: none;
+    border: none;
+    resize: none;
+    color: #495057;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.texto-resultado:focus {
+    outline: none;
+}
+
 .muneco {
     width: 40vw;
     max-width: 330px;
@@ -114,13 +127,14 @@ line-height: 150%
 
 .mensaje {
     text-align: center;
+    padding: 5px 32px;
 }
 
 .titulo {
     align-self: stretch;
     color: #343a40;
     text-align: center;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
@@ -130,7 +144,7 @@ line-height: 150%
     align-self: stretch;
     color: #495057;
     text-align: center;
-    font-family: Inter;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -148,6 +162,13 @@ line-height: 150%
     position: absolute;
     left: 36px;
     bottom: 33px;
+    visibility: hidden;
+}
+
+footer {
+    background-color: #97a3da;
+    text-align: center;
+    padding: 10px 0;
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -160,5 +181,6 @@ line-height: 150%
         position: absolute;
         left: 92px;
         bottom: 33px;
+        visibility: hidden;
     }
 }
