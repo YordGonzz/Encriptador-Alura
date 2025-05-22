@@ -1,54 +1,66 @@
+/* style.css: Defines the visual appearance and layout for the Encriptador project. */
+
+/* General Body Styles */
 body {
-    background-color: #97a3da;
+    background-color: #97a3da; /* Main background color for the page */
+    font-family: "Inter", sans-serif; /* Default font for the entire application */
 }
 
+/* Header Styles */
 .cabeceralogo {
-    width: 96%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 4vw;
     height: 50px;
     margin-top: 35px;
     margin-bottom: 20px;
-    padding: 0 2%;
 }
 
 .principal {
     display: flex;
-    width: 96%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 4vw;
     height: 100%;
-    padding: 0 2%;
     margin: 0 auto;
     justify-content: center;
-    gap: 4vw;
+    gap: 4vw; /* Space between the two main sections */
 }
 
+/* Main Content Sections Layout */
+/* Styles for the section containing the input textarea and encryption/decryption buttons */
 .section-encriptar-desencriptar {
-    display: flex;
-    width: 46%;
+    display: flex; /* Enables flexbox for layout */
+    width: 46%; /* Approximate width, allows the other section to fit */
     height: 795px;
     flex-direction: column;
     justify-content: space-between;
-    justify-items: center;
-    position: relative;
+    position: relative; /* For positioning child elements like 'dato-importante' */
 }
 
+/* Textarea Styles */
 .texto-encriptar-desencriptar {
-    background-color: #97a3da;
-    width: 100%;
-    height: 400px;
-    margin: 100px 0 0;
-    border: none;
-    color: #0a3871;
-    font-family: "Inter", sans-serif;
-    font-size: 32px;
+    width: 100%; /* Full width of its parent container */
+    height: 400px; /* Fixed height for the input area */
+    margin: 100px 0 0; /* Top margin to push it down from the header */
+    border: none; /* Removes default border */
+    color: #0a3871; /* Text color */
+    font-family: "Inter", sans-serif; /* Consistent font */
+    font-size: 32px; /* Large font size for input */
     font-style: normal;
     font-weight: 400;
-    line-height: 150%;
-    resize: none;
+    line-height: 150%; /* Spacing between lines */
+    resize: none; /* Disables user resizing of the textarea */
+    background-color: transparent; /* Ensures no conflict with body background, as original redundant color was removed */
 }
 
+/* Accessibility: Removing 'outline: none;' to restore default browser focus indicators.
+   Default focus indicators are important for keyboard navigation. */
 .texto-encriptar-desencriptar:focus {
-    outline: none;
+    /* outline: none; */ /* Removed for accessibility */
 }
 
+/* Validation Message Styles */
 .dato-importante {
     position: absolute;
     left: 3px;
@@ -61,43 +73,50 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 35px;
-    gap: 4vw;
+    gap: 4vw; /* Space between buttons */
 }
 
+/* Button Styles */
 .btn-encriptar,
 .btn-desencriptar {
-    padding: 24px 24px;
-    font-size: 1.2rem;
-    border-radius: 24px;
-    border: 1px solid #0a3871;
-    flex-shrink: 0;
-    width: 20vw;
-    max-width: 328px;
+    padding: 24px 24px; /* Generous padding for larger click/tap area */
+    font-size: 1.2rem; /* Font size for button text */
+    border-radius: 24px; /* Rounded corners */
+    border: 1px solid #0a3871; /* Border color */
+    flex-shrink: 0; /* Prevents buttons from shrinking if space is limited */
+    width: auto; /* Allows button width to be determined by content and padding */
+    min-width: 280px; /* Minimum width to ensure buttons are not too small */
+    flex-grow: 1; /* Allows buttons to grow and fill available space in the flex container */
+    max-width: 328px; /* Maximum width to prevent buttons from becoming too large */
+    cursor: pointer; /* Changes cursor to indicate interactivity */
 }
 
 .btn-color-encriptar {
-    background-color: #0a3871;
-    color: #ffffff;
+    background-color: #0a3871; /* Dark blue background for primary action */
+    color: #ffffff; /* White text for contrast */
 }
 
 .btn-color-desencriptar {
-    color: #0a3871;
+    color: #0a3871; /* Text color matches border, background is transparent/body default */
+    background-color: #D8DFE8; /* Light grey background for secondary action, provides better contrast */
 }
 
+/* Styles for the section displaying the encrypted/decrypted result */
 .section-texto-resultado {
     display: flex;
-    width: 47%;
-    max-width: 400px;
-    height: 795px;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 24px;
-    justify-content: center;
-    box-shadow: 0px 0px 5px 1px;
-    position: relative;
-    text-align: center;
+    width: 47%; /* Approximate width */
+    max-width: 400px; /* Maximum width for the result box */
+    height: 795px; /* Fixed height */
+    flex-direction: column; /* Stacks child elements vertically */
+    background-color: white; /* White background for the result area */
+    border-radius: 24px; /* Rounded corners */
+    justify-content: center; /* Centers content vertically if it's smaller than the container */
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: relative; /* For positioning child elements like the copy button */
+    text-align: center; /* Centers inline content like text and images */
 }
 
+/* Output Textarea Styles */
 .texto-resultado {
     width: 88%;
     height: 560px;
@@ -112,13 +131,15 @@ body {
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%;
+    line-height: 150%; /* Spacing for readability */
 }
 
+/* Accessibility: Removing 'outline: none;' to restore default browser focus indicators. */
 .texto-resultado:focus {
-    outline: none;
+    /* outline: none; */ /* Removed for accessibility */
 }
 
+/* Placeholder Content (Image and Text) Styles */
 .muneco {
     width: 40vw;
     max-width: 330px;
@@ -151,36 +172,168 @@ body {
     line-height: 150%;
 }
 
+/* Copy Button Styles */
 .btn-copy {
     font-size: 1.2rem;
     border-radius: 24px;
-    border: 1px solid #0a3871;
+    border: 1px solid #0a3871; /* Style consistent with other buttons */
     color: #0a3871;
-    width: 36vw;
-    max-width: 328px;
-    padding: 24px;
-    position: absolute;
-    left: 36px;
-    bottom: 33px;
-    visibility: hidden;
+    background-color: #D8DFE8; /* Light grey background like secondary button */
+    width: auto; /* Auto width based on content and padding */
+    max-width: 328px; /* Max width */
+    padding: 24px; /* Padding */
+    position: absolute; /* Positioned relative to 'section-texto-resultado' */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 33px; /* Distance from the bottom */
+    visibility: hidden; /* Initially hidden, shown via JavaScript */
+    cursor: pointer; /* Indicates interactivity */
 }
 
+/* Footer Styles */
 footer {
-    background-color: #97a3da;
-    text-align: center;
-    padding: 10px 0;
+    background-color: #97a3da; /* Matches body background for consistency */
+    text-align: center; /* Centers the footer text */
+    padding: 20px 0; /* Vertical padding */
+    margin-top: 40px; /* Space above the footer */
+    color: #0a3871; /* Text color for footer, ensuring contrast */
+    font-weight: bold;
 }
 
+/* Responsive Media Queries */
+/* Adjustments for tablet-sized screens (e.g., iPads) */
 @media (min-width: 769px) and (max-width: 1024px) {
+    .principal {
+        flex-direction: column; /* Stack sections vertically on tablets */
+        align-items: center; /* Center sections in the column */
+        height: auto; /* Allow height to adjust to content */
+    }
+
+    .section-encriptar-desencriptar,
+    .section-texto-resultado {
+        width: 80%; /* Allow sections to take more width */
+        max-width: 600px; /* Max width for sections on tablets */
+        height: auto; /* Adjust height automatically */
+        margin-bottom: 40px; /* Space between stacked sections */
+    }
+    
+    .texto-encriptar-desencriptar {
+        height: 300px; /* Slightly reduce textarea height */
+        margin-top: 40px;
+    }
+
+    .section-texto-resultado {
+        min-height: 300px; /* Minimum height for result area */
+        justify-content: flex-start; /* Align content to top when stacked */
+        padding-top: 20px;
+    }
+
+    .texto-resultado {
+        height: auto; /* Auto height for result textarea */
+        min-height: 150px; /* Min height for result textarea */
+        margin-bottom: 100px; /* Adjust margin for copy button space */
+    }
+
+    .muneco {
+        max-width: 280px; /* Adjust image size */
+    }
+    
+    .btns {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+
+    .btn-encriptar,
+    .btn-desencriptar {
+        width: 100%; /* Make buttons full width of their container */
+        max-width: 100%; /* Override previous max-width */
+    }
+
     .btn-copy {
-        font-size: 1.2rem;
-        border-radius: 24px;
-        width: 22vw;
-        max-width: 328px;
-        padding: 24px;
-        position: absolute;
-        left: 92px;
-        bottom: 33px;
-        visibility: hidden;
+        width: 80%; /* Adjust copy button width relative to its container */
+        /* Centering is still handled by left: 50% and transform: translateX(-50%) */
+        /* Removed fixed 'width: 22vw' as it might be too restrictive or too wide depending on viewport */
+        max-width: 280px; /* Ensure it's not excessively wide */
+    }
+}
+
+/* Adjustments for mobile screens */
+@media (max-width: 768px) {
+    .cabeceralogo {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        height: auto;
+        padding: 0 5vw; /* Slightly more padding for smaller screens */
+    }
+    
+    .logo {
+        width: 80px; /* Smaller logo */
+    }
+
+    .principal {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center; /* Center sections */
+        padding: 0 5vw;
+        gap: 20px; /* Reduce gap */
+        height: auto;
+    }
+
+    .section-encriptar-desencriptar,
+    .section-texto-resultado {
+        width: 100%; /* Full width for sections */
+        height: auto; /* Auto height */
+        margin-bottom: 30px;
+    }
+
+    .texto-encriptar-desencriptar {
+        font-size: 28px; /* Slightly smaller font for input */
+        height: 250px; /* Adjust height */
+        margin-top: 20px;
+    }
+
+    .btns {
+        flex-direction: column; /* Stack buttons */
+        gap: 15px; /* Reduce gap between buttons */
+    }
+
+    .btn-encriptar,
+    .btn-desencriptar {
+        width: 100%; /* Full width buttons */
+        padding: 20px; /* Adjust padding */
+        font-size: 1rem; /* Adjust font size */
+    }
+    
+    .section-texto-resultado {
+        min-height: 200px; /* Min height for result area */
+        padding-top: 20px;
+        box-shadow: none; /* Optionally remove shadow on mobile for cleaner look */
+    }
+
+    .texto-resultado {
+        font-size: 16px; /* Smaller font for result */
+        min-height: 100px;
+        margin-bottom: 80px; /* Space for copy button */
+    }
+
+    .muneco {
+        display: none; /* Hide image on small screens to save space */
+    }
+
+    .titulo.mensaje {
+        font-size: 20px; /* Adjust title size */
+    }
+    .texto.mensaje {
+        font-size: 14px; /* Adjust text size */
+    }
+
+    .btn-copy {
+        width: 90%; /* Wider copy button */
+        padding: 20px;
+        font-size: 1rem;
+        max-width: none; /* Remove max-width constraint if needed, or adjust */
+    }
+
+    footer {
+        padding: 15px 0;
+        margin-top: 20px;
     }
 }
