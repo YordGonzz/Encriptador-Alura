@@ -1,40 +1,48 @@
 body {
     background-color: #97a3da;
+    overflow-y: hidden; /* Prevent vertical scrolling */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    margin: 0; /* Reset default margin */
 }
 
 .cabeceralogo {
     width: 96%;
-    height: 50px;
-    margin-top: 35px;
-    margin-bottom: 20px;
+    height: 50px; /* Keep fixed height for logo header */
+    margin-top: 20px; /* Adjusted margin */
+    margin-bottom: 15px; /* Adjusted margin */
     padding: 0 2%;
+    flex-shrink: 0; /* Prevent header from shrinking */
 }
 
 .principal {
     display: flex;
     width: 96%;
-    height: 100%;
+    flex-grow: 1; /* Allow principal to take available vertical space */
     padding: 0 2%;
     margin: 0 auto;
     justify-content: center;
     gap: 4vw;
+    align-items: stretch; /* Make children stretch to fill height */
 }
 
 .section-encriptar-desencriptar {
     display: flex;
     width: 46%;
-    height: 795px;
+    /* height: 795px; Removed fixed height */
     flex-direction: column;
-    justify-content: space-between;
-    justify-items: center;
-    position: relative;
+    justify-content: space-between; /* Distribute space within this section */
+    /* justify-items: center; Removed as it's for grid, not flex column */
+    position: relative; /* Keep for absolute positioning of .dato-importante */
 }
 
 .texto-encriptar-desencriptar {
     background-color: #97a3da;
     width: 100%;
-    height: 400px;
-    margin: 100px 0 0;
+    /* height: 400px; Will allow flex to manage or use relative units */
+    flex-grow: 1; /* Allow textarea to grow */
+    margin: 20px 0 0; /* Adjusted top margin */
     border: none;
     color: #0a3871;
     font-family: "Inter", sans-serif;
@@ -52,7 +60,7 @@ body {
 .dato-importante {
     position: absolute;
     left: 3px;
-    bottom: 130px;
+    bottom: 65px; /* Adjusted based on new layout */
     display: none;
 }
 
@@ -60,7 +68,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 35px;
+    margin-bottom: 20px; /* Adjusted margin */
     gap: 4vw;
 }
 
@@ -89,21 +97,23 @@ body {
     display: flex;
     width: 47%;
     max-width: 400px;
-    height: 795px;
+    /* height: 795px; Removed fixed height */
     flex-direction: column;
     background-color: white;
     border-radius: 24px;
-    justify-content: center;
+    justify-content: space-between; /* Adjust content distribution */
     box-shadow: 0px 0px 5px 1px;
     position: relative;
     text-align: center;
+    padding-top: 20px; /* Add some padding at the top */
+    padding-bottom: 80px; /* Ensure space for the absolute positioned button */
 }
 
 .texto-resultado {
     width: 88%;
-    height: 560px;
-    margin: 0 auto;
-    margin-bottom: 170px;
+    /* height: 560px; Will allow flex to manage or use relative units */
+    flex-grow: 1; /* Allow textarea to grow */
+    margin: 20px auto 20px; /* Adjusted margins */
     padding: 0 10px;
     display: none;
     border: none;
@@ -170,7 +180,9 @@ body {
 footer {
     background-color: #97a3da;
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0; /* Adjusted padding */
+    flex-shrink: 0; /* Prevent footer from shrinking */
+    width: 100%; /* Ensure footer takes full width */
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {

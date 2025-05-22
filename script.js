@@ -42,7 +42,7 @@ function copiarAlPortapapeles(ev) {
     const codigoACopiar = document.querySelector(".texto-resultado");
     const contenidoACopiar = codigoACopiar.value;
     navigator.clipboard.writeText(contenidoACopiar).then(function () {
-        ev.target.textContent = "Copiado!";
+        ev.target.textContent = "Copiado";
         ev.target.classList.add("btn-copied");
 
         setTimeout(function() {
