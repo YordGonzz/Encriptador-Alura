@@ -73,6 +73,7 @@ body {
     flex-shrink: 0;
     width: 20vw;
     max-width: 328px;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out; /* Added transition */
 }
 
 .btn-color-encriptar {
@@ -163,6 +164,7 @@ body {
     left: 36px;
     bottom: 33px;
     visibility: hidden;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out; /* Added transition */
 }
 
 footer {
@@ -183,4 +185,29 @@ footer {
         bottom: 33px;
         visibility: hidden;
     }
+}
+
+.btn-copied {
+    background-color: #28a745 !important; /* Green background */
+    color: #FFFFFF !important; /* White text */
+    border-color: #28a745 !important; /* Optional: Match border color */
+}
+
+.btn-encriptar:hover {
+    background-color: #002752; /* Darker blue */
+    transform: scale(1.03);
+}
+
+.btn-desencriptar:hover {
+    background-color: #D6E4F0; /* Light blue */
+    border-color: #002752; /* Darker border */
+    color: #002752; /* Darker text */
+    transform: scale(1.03);
+}
+
+.btn-copy:hover {
+    background-color: #D6E4F0; /* Light blue */
+    border-color: #002752; /* Darker border */
+    color: #002752; /* Darker text */
+    transform: scale(1.03);
 }

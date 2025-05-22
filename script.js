@@ -34,13 +34,24 @@ function desencriptarTexto() {
 }
 
 function copiarAlPortapapeles(ev) {
-    if (!navigator.clipboard)
-        alert("¡Tu navegador no soporta copiar al Portapapeles, intentelo manualmente!")
+    if (!navigator.clipboard) {
+        alert("¡Tu navegador no soporta copiar al Portapapeles, intentelo manualmente!");
+        return; // Exit if clipboard API not supported
+    }
 
-    const codigoACopiar = document.querySelector(".texto-resultado"); // Elemento a copiar
+    const codigoACopiar = document.querySelector(".texto-resultado");
     const contenidoACopiar = codigoACopiar.value;
     navigator.clipboard.writeText(contenidoACopiar).then(function () {
-        ev.target.textContent = "Copiado"; // Cambiar el texto del botón
+        ev.target.textContent = "Copiado!";
+        ev.target.classList.add("btn-copied");
+
+        setTimeout(function() {
+            ev.target.classList.remove("btn-copied");
+            ev.target.textContent = "Copiar";
+        }, 2500); // Revert after 2.5 seconds
+    }).catch(function(err) {
+        console.error("Error al copiar al portapapeles: ", err);
+        // Optionally, provide user feedback about the copy failure
     });
 }
 
